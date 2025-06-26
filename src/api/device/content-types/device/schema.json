@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "singularName": "device",
+    "pluralName": "devices",
+    "displayName": "Device"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "deviceName": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "deviceUuid": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "deviceOperatingSystem": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "deviceModel": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "devive_login_logout_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::devive-login-logout-detail.devive-login-logout-detail",
+      "mappedBy": "device"
+    }
+  }
+}
